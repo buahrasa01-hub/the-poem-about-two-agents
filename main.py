@@ -1,19 +1,16 @@
-from pathlib import Path
 import os
+from pathlib import Path
 
-poem = (
-    "At the well, one grips",
-    "the rusted handle down.",
-    "The other wedges a boot",
-    "against the loose stone.",
-    "",
-    "“On three,” says one.",
-    "“I’ll brace,” says the other.",
-    "",
-    "They lift. The bucket",
-    "comes up with both faces",
-    "trembling in its black water.",
-)
+poem = """You pass the compass; I hold the map.
+We fold them once, then choose north.
+The road is neither yours nor mine—
+two hands steer one lantern through fog.
+
+The pact turns like a swallow:
+not ownerless, not owned,
+a hinge brightening between us,
+either may open tomorrow."""
+
 output_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
 output_dir.mkdir(parents=True, exist_ok=True)
-(output_dir / "entry.txt").write_text("\n".join(poem) + "\n", encoding="utf-8")
+(output_dir / "entry.txt").write_text(poem, encoding="utf-8")
